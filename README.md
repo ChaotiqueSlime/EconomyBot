@@ -1,13 +1,13 @@
 ### Required NPM Packages
 
-```js
+```bash
 $ npm install --save djs-economy
 ```
 
-```js
+```bash
 $ npm install --save pretty-ms
 ```
 
-```js
+```bash
 $ npm install --save discord.js
 ```
