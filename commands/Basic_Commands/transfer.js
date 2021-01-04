@@ -4,22 +4,16 @@ module.exports = {
     aliases: ['transfer'],
     cooldown: 5,
     async execute(message) {
+        if(message.deletable) message.delete()
         const DB = require('djs-economy')
         const Discord = require('discord.js')
         const { prefix } = require('../../config.json')
         const args = message.content.slice(prefix.length).trim().split(/ +/g);
-        let blacklist = ['-'];
-        let foundInText = false;
-        for (var i in blacklist) {
-          if (message.content.toLocaleLowerCase().includes(blacklist[i].toLocaleLowerCase())) foundInText = true;
-        }
-        if (foundInText) {
-          message.delete();
-           {return message.channel.send('You Cant Give Negative Money').then(m => m.delete({ timeout: 8000 }));}
-          }
-    
+        
+        if(!parseInt(args[2])){return message.channel.send(`That Amount Was Not A Number!`).then(m => m.delete({ timeout: 8000 }));}
+
         var user = message.mentions.users.first()
-        var amount = args[2]
+        var amount = Math.abs(args[2])
       
         if (!user) {return message.reply('@ the person you wanna pay first').then(m => m.delete({ timeout: 8000 }));}
         if (!amount) {return message.reply('Specify the amount you want to pay!').then(m => m.delete({ timeout: 8000 }));}

@@ -4,6 +4,7 @@ module.exports = {
     aliases: ['steal'],
     cooldown: 43200, 
     async execute(message) {
+        if(message.deletable) message.delete()
         const Discord = require('discord.js')
         const DB = require('djs-economy')
         const { prefix } = require('../../config.json')

@@ -4,6 +4,7 @@ module.exports = {
     aliases: [],
     cooldown: 86400,
     async execute(message) {
+        if(message.deletable) message.delete()
         const Discord = require('discord.js')
         const DB = require('djs-economy')
         const first = await DB.GetCash(message.author.id);

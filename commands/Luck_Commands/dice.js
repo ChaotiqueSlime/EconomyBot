@@ -7,6 +7,7 @@ module.exports = {
     aliases: [],
     cooldown: 1,
     async execute(message, args) {
+    if(message.deletable) message.delete()
         
     if(!parseInt(args[1])){return message.channel.send(`Your Bet Wasnt A Number <@${message.author.id}>`).then(m => m.delete({ timeout: 8000 }));}
     var roll = args[0]

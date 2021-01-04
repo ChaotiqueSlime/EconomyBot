@@ -4,6 +4,7 @@ module.exports = {
     aliases: ['bal', 'money'],
     cooldown: 5,
     async execute(message) {
+        if(message.deletable) message.delete()
         const formatNumber = require('../../functions/regex')
         const DB = require('djs-economy');
         const Discord = require('discord.js');

@@ -6,6 +6,7 @@ module.exports = {
     aliases: [],
     cooldown: 150,
     async execute(message) {
+        if(message.deletable) message.delete()
         const check = await DB.GetCash(message.author.id)
         const work = DB.Work(100000, 300000, message.author.id);
         const { MessageEmbed } = require('discord.js');

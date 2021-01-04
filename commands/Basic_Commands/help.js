@@ -4,6 +4,7 @@ module.exports = {
     aliases: [],
     cooldown: 5,
     async execute(message) {
+        if(message.deletable) message.delete()
         const { MessageEmbed } = require('discord.js');
         const { prefix } = require('../../config.json');
         const p = prefix

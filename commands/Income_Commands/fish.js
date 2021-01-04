@@ -6,6 +6,7 @@ module.exports = {
     aliases: [],
     cooldown: 65,
     async execute(message) {
+        if(message.deletable) message.delete()
         const formatNumber = require('../../functions/regex')
         const first = await DB.GetCash(message.author.id);
         console.log(`${message.author.username} First Timer Check: ${first.cash}`)

@@ -5,6 +5,7 @@ module.exports = {
     aliases: ['lotto', 'lottery'],
     cooldown: 30,
     async execute(message) {
+        if(message.deletable) message.delete()
         const args = message.content.slice(prefix.length).trim().split(/ +/g);
         const userRoll = args[1]
         if (!userRoll) {return message.reply(`Invalid Syntax! ${prefix}lotto <number>`).then(m => m.delete({ timeout: 8000 }));}

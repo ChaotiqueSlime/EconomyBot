@@ -7,6 +7,7 @@ module.exports = {
     aliases: ['slot'],
     cooldown: 5,
     async execute(message, args) {
+    if(message.deletable) message.delete()
     let slots = ["\\🍒", "\\🍓", "\\🍎"];
     let result1 = Math.floor((Math.random() * slots.length));
     let result2 = Math.floor((Math.random() * slots.length));
