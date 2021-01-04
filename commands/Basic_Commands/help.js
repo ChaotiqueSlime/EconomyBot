@@ -12,8 +12,9 @@ module.exports = {
         const crate_commands = `\n● ${p}hourly\n● ${p}daily`;
         const income_commands = `\n● ${p}beg\n● ${p}fish\n● ${p}work`;
         const luck_commands = `\n● ${p}rob \`<@user>\`\n● ${p}lotto \`<number 1-50>\`\n● ${p}dice \`<# 1-6> <bet>\``;
+        const other_commands = `\n● ${p}server`
 
-        let pages = [`**\\⚙️ Basic Commands**${basic_commands}`, `**\\🧰 Crate Commands**${crate_commands}`, `**\\💰 Income Commands**${income_commands}`, `**\\🍀 Luck Commands**${luck_commands}`];
+        let pages = [`**\\⚙️ Basic Commands**${basic_commands}`, `**\\🧰 Crate Commands**${crate_commands}`, `**\\💰 Income Commands**${income_commands}`, `**\\🍀 Luck Commands**${luck_commands}`, `**\\❓ Other Commands**${other_commands}`];
         let page = 1;
         
         const embed2 = new MessageEmbed()
