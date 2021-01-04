@@ -7,17 +7,11 @@ module.exports = {
     aliases: [],
     cooldown: 1,
     async execute(message, args) {
-        let blacklist = ['-'];
-        let foundInText = false;
-        for (var i in blacklist) {
-        if (message.content.toLocaleLowerCase().includes(blacklist[i].toLocaleLowerCase())) foundInText = true;
-        }
-        if (foundInText) {
-        message.delete();
-        {return message.channel.send('You Cannot Gamble Negative Money Moron').then(m => m.delete({ timeout: 8000 }));}
-    }
+        
+    if(!parseInt(args[1])){return message.channel.send(`Your Bet Wasnt A Number <@${message.author.id}>`).then(m => m.delete({ timeout: 8000 }));}
     var roll = args[0]
-    var amount = args[1]
+    const fixamount = Math.abs(args[1])
+    var amount = fixamount
 
   if (!roll || ![1, 2, 3, 4, 5, 6].includes(parseInt(roll))) {return message.reply('Specify the roll, it should be a number between 1-6').then(m => m.delete({ timeout: 8000 }));}
   if (!amount) {return message.reply('Specify the amount you want to gamble!').then(m => m.delete({ timeout: 8000 }));}
