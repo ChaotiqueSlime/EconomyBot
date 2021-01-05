@@ -66,7 +66,7 @@ module.exports = {
             yellow.stop()
             return;
         } else {
-            embed.setDescription(`You Lost Your Bet! Color Was: ${botroll}\nYou Now Have: $${formatNumber(check.cash - bet)}`)
+            embed.setDescription(`You Lost Your Bet! Color Was: \\${botroll}\nYou Now Have: $${formatNumber(check.cash - bet)}`)
             msg.edit(embed)
             msg.reactions.removeAll()
             red.stop()
@@ -89,7 +89,7 @@ module.exports = {
             yellow.stop()
             return;
         } else {
-            embed.setDescription(`You Lost Your Bet! Color Was: ${botroll}\nYou Now Have: $${formatNumber(check.cash - bet)}`)
+            embed.setDescription(`You Lost Your Bet! Color Was: \\${botroll}\nYou Now Have: $${formatNumber(check.cash - bet)}`)
             msg.edit(embed)
             msg.reactions.removeAll()
             red.stop()
@@ -112,7 +112,7 @@ module.exports = {
             yellow.stop()
             return;
         } else {
-            embed.setDescription(`You Lost Your Bet! Color Was: ${botroll}\nYou Now Have: $${formatNumber(check.cash - bet)}`)
+            embed.setDescription(`You Lost Your Bet! Color Was: \\${botroll}\nYou Now Have: $${formatNumber(check.cash - bet)}`)
             msg.edit(embed)
             msg.reactions.removeAll()
             red.stop()
@@ -135,7 +135,7 @@ module.exports = {
             yellow.stop()
             return;
         } else {
-            embed.setDescription(`You Lost Your Bet! Color Was: ${botroll}\nYou Now Have: $${formatNumber(check.cash - bet)}`)
+            embed.setDescription(`You Lost Your Bet! Color Was: \\${botroll}\nYou Now Have: $${formatNumber(check.cash - bet)}`)
             msg.edit(embed)
             msg.reactions.removeAll()
             red.stop()
@@ -158,7 +158,7 @@ module.exports = {
             yellow.stop()
             return;
         } else {
-            embed.setDescription(`You Lost Your Bet! Color Was: ${botroll}\nYou Now Have: $${formatNumber(check.cash - bet)}`)
+            embed.setDescription(`You Lost Your Bet! Color Was: \\${botroll}\nYou Now Have: $${formatNumber(check.cash - bet)}`)
             msg.edit(embed)
             msg.reactions.removeAll()
             red.stop()

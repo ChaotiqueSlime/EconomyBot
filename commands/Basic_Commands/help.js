@@ -2,7 +2,7 @@ module.exports = {
     name: 'help',
     description: 'help module',
     aliases: [],
-    cooldown: 5,
+    cooldown: 60,
     async execute(message) {
         if(message.deletable) message.delete()
         const { MessageEmbed } = require('discord.js');
@@ -13,7 +13,7 @@ module.exports = {
         const crate_commands = `\n● ${p}hourly\n● ${p}daily\n● ${p}booster\n● ${p}member`;
         const income_commands = `\n● ${p}beg\n● ${p}fish\n● ${p}work`;
         const luck_commands = `\n● ${p}rob \`<@user>\`\n● ${p}lotto \`<number 1-50>\`\n● ${p}dice \`<# 1-6> <bet>\`\n● ${p}slots \`<bet>\`\n● ${p}roulette \`<bet>\``;
-        const other_commands = `\n● ${p}server`
+        const other_commands = `\n● ${p}server\n● ${p}rps\n● ${p}8ball \`<question>\`\n● ${p}nickname \`<new name>\`\n● ${p}setcash \`<@user> <amount>\`\n● ${p}deluser \`<@user>\``;
 
         let pages = [`**\\⚙️ Basic Commands**${basic_commands}`, `**\\🧰 Crate Commands**${crate_commands}`, `**\\💰 Income Commands**${income_commands}`, `**\\🍀 Luck Commands**${luck_commands}`, `**\\❓ Other Commands**${other_commands}`];
         let page = 1;

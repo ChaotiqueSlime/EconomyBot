@@ -18,6 +18,7 @@ module.exports = {
     aliases: ['sinfo'],
     cooldown: 5,
 	async execute(msg) {
+		if(message.deletable) message.delete()
 		if (!msg.guild.members.cache.has(msg.guild.ownerID)) await msg.guild.members.fetch(msg.guild.ownerID);
 		const embed = new MessageEmbed()
 			.setColor(0x00AE86)
