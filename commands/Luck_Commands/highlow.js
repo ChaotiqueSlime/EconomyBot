@@ -9,7 +9,7 @@ module.exports = {
     async execute(message) {
         const args = message.content.slice(prefix.length).trim().split(/ /g);
         const userBet = args[1];
-        console.log(userBet)
+        
         if (!userBet) return message.reply(`Invalid Syntax! ${prefix}hl <bet>`).then(m => m.delete({ timeout: 8000 }));
         if (isNaN(userBet)) return message.reply(`Invalid Syntax! ${prefix}hl <bet>\nBet must be a number`).then(m => m.delete({ timeout: 8000 }));
         if (userBet < 10000) return message.reply(`Invalid Syntax! ${prefix}hl <bet>\nBet must be more than $10,000`).then(m => m.delete({ timeout: 8000 }));
