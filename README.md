@@ -11,7 +11,3 @@ $ npm install --save pretty-ms
 ```bash
 $ npm install --save discord.js
 ```
-
-```bash
-$ npm install --save moment
-```
