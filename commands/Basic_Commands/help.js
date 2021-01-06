@@ -14,14 +14,23 @@ module.exports = {
         const number3 = `[3]`
         const number4 = `[7]`
         const number5 = `[7]`
+        const number6 = `[3]`
 
         const basic_commands = `\n● ${p}balance \`[@user]\`\n● ${p}pay \`<@user> <amount>\`\n● ${p}lb \`[@user]\``;
         const crate_commands = `\n● ${p}hourly\n● ${p}daily\n● ${p}booster\n● ${p}member`;
         const income_commands = `\n● ${p}beg\n● ${p}fish\n● ${p}work`;
         const luck_commands = `\n● ${p}rob \`<@user>\`\n● ${p}lotto \`<number 1-50>\`\n● ${p}dice \`<# 1-6> <bet>\`\n● ${p}slots \`<bet>\`\n● ${p}roulette \`<bet>\`\n● ${p}highlow \`<bet>\`\n● ${p}blackjack \`<bet>\``;
         const other_commands = `\n● ${p}server\n● ${p}rps\n● ${p}8ball \`<question>\`\n● ${p}nickname \`<new name>\`\n● ${p}setcash \`<@user> <amount>\`\n● ${p}deluser \`<@user>\`\n● ${p}whois \`[@user or id]\``;
+        const perk_commands = `\n● ${p}booster \`(you need to be a booster)\`\n● ${p}member \`(must have youtube member subscription)\`\n● ${p}nickname \`(must have youtube member subscription)\``;
 
-        let pages = [`**\\⚙️ Basic Commands ${number1}**${basic_commands}`, `**\\🧰 Crate Commands ${number2}**${crate_commands}`, `**\\💰 Income Commands ${number3}**${income_commands}`, `**\\🍀 Luck Commands ${number4}**${luck_commands}`, `**\\❓ Other Commands ${number5}**${other_commands}`];
+        const basic = `**\\⚙️ Basic Commands ${number1}**${basic_commands}`;
+        const crate = `**\\🧰 Crate Commands ${number2}**${crate_commands}`;
+        const income = `**\\💰 Income Commands ${number3}**${income_commands}`;
+        const luck = `**\\🍀 Luck Commands ${number4}**${luck_commands}`;
+        const other = `**\\❓ Other Commands ${number5}**${other_commands}`;
+        const perk = `**\\💎 Perk Commands ${number6}**${perk_commands}`;
+
+        let pages = [basic, crate, income, luck, other, perk];
         let page = 1;
         
         const embed2 = new MessageEmbed()

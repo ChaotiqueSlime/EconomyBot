@@ -7,7 +7,6 @@ module.exports = {
 		const { MessageEmbed } = require('discord.js');
 		const userArray = message.content.split(' ');
 		if (message.deletable) message.delete();
-        if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('You Don\'t Have - MANAGE_MESSAGES Permission').then(m => m.delete({timeout: 9000}));;
 		const userArgs = userArray.slice(1);
 		const member = message.mentions.members.first() || message.guild.members.cache.get(userArgs[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === userArgs.slice(0).join(' ') || x.user.username === userArgs[0]) || message.member;
 

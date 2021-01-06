@@ -17,7 +17,7 @@ module.exports = {
   if (!roll || ![1, 2, 3, 4, 5, 6].includes(parseInt(roll))) {return message.reply('Specify the roll, it should be a number between 1-6').then(m => m.delete({ timeout: 8000 }));}
   if (!amount) {return message.reply('Specify the amount you want to gamble!').then(m => m.delete({ timeout: 8000 }));}
   var check = await DB.GetCash(message.author.id)
-  if (check.cash < amount) {return message.reply('You Dont Have That Much Coins To Gamble').then(m => m.delete({ timeout: 8000 }));}
+  if (check.cash < amount) {return message.reply('You Dont Have That Much Cash To Gamble').then(m => m.delete({ timeout: 8000 }));}
   const botdice = ['1', '2', '3', '4', '5', '6']
   const result = botdice[Math.floor(Math.random() * botdice.length )]
   if (parseInt(roll) === parseInt(result)) {

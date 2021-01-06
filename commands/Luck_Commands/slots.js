@@ -25,6 +25,8 @@ module.exports = {
 
     DB.SubCash(message.author.id, bet)
     const check = await DB.GetCash(message.author.id)
+
+    if(check.cash <= bet){return message.channel.send(`You Dont Have That Much Money To Bet <@${message.author.id}>`).then(m => m.delete({ timeout: 8000 }));}
       
     if(result1 === result2 && result1 === result3) {
         let embed = new MessageEmbed()

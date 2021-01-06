@@ -16,7 +16,7 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
         .setColor('#cf13f0')
         .setThumbnail(cratesicon)
-        .setDescription(`:dollar: **1,000,000** was added to your balance\nYou Now Have $${(formatNumber(output.cash))}`)
+        .setDescription(`💵 **1,000,000** was added to your balance\nYou Now Have $${(formatNumber(output.cash))}`)
         .setTitle('Daily Crate Claimed!');
         console.log(`${message.author.username} (Balance: $${(formatNumber(output.cash))})`)
         message.channel.send(embed)

@@ -3,7 +3,7 @@ module.exports = {
     description: "A Economy Leaderboard",
     aliases: ['lb', 'top'],
     cooldown: 5,
-    async execute(message) {
+    async execute(message, args) {
         if(message.deletable) message.delete()
         const { prefix } = require('../../config.json');
         const djs = require('djs-economy');
@@ -16,7 +16,7 @@ module.exports = {
         var output = await djs.Leaderboard({
             filter: x => x.cash > 50,
             search: member.id})
-        if (message.mentions.users.first()) {
+        if (args[0]) {
         const embed = new Discord.MessageEmbed()
         .setColor('RANDOM')
         .setDescription(`**${member.user.tag}** Is **#${output}** On The Leaderboard!`);
