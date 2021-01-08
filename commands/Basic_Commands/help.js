@@ -11,17 +11,17 @@ module.exports = {
 
         const number1 = `[3]`;
         const number2 = `[4]`
-        const number3 = `[3]`
+        const number3 = `[4]`
         const number4 = `[7]`
         const number5 = `[7]`
-        const number6 = `[3]`
+        const number6 = `[4]`
 
         const basic_commands = `\n● ${p}balance \`[@user]\`\n● ${p}pay \`<@user> <amount>\`\n● ${p}lb \`[@user]\``;
         const crate_commands = `\n● ${p}hourly\n● ${p}daily\n● ${p}booster\n● ${p}member`;
-        const income_commands = `\n● ${p}beg\n● ${p}fish\n● ${p}work`;
+        const income_commands = `\n● ${p}beg\n● ${p}fish\n● ${p}work\n● ${p}mine`;
         const luck_commands = `\n● ${p}rob \`<@user>\`\n● ${p}lotto \`<number 1-50>\`\n● ${p}dice \`<# 1-6> <bet>\`\n● ${p}slots \`<bet>\`\n● ${p}roulette \`<bet>\`\n● ${p}highlow \`<bet>\`\n● ${p}blackjack \`<bet>\``;
         const other_commands = `\n● ${p}server\n● ${p}rps\n● ${p}8ball \`<question>\`\n● ${p}nickname \`<new name>\`\n● ${p}setcash \`<@user> <amount>\`\n● ${p}deluser \`<@user>\`\n● ${p}whois \`[@user or id]\``;
-        const perk_commands = `\n● ${p}booster \`(you need to be a booster)\`\n● ${p}member \`(must have youtube member subscription)\`\n● ${p}nickname \`(must have youtube member subscription)\``;
+        const perk_commands = `\n● ${p}booster \`(you need to be a booster)\`\n● ${p}member \`(must have youtube member subscription)\`\n● ${p}nickname \`(must have youtube member subscription)\`\n● ${p}mine \`(must be a booster or youtube member)\``;
 
         const basic = `**\\⚙️ Basic Commands ${number1}**${basic_commands}`;
         const crate = `**\\🧰 Crate Commands ${number2}**${crate_commands}`;
@@ -48,14 +48,18 @@ module.exports = {
             msg.react('⏹️')
             msg.react('➡️')
 
-            setTimeout(() => {
+            function stopAll() {
               stop.stop()
               forwards.stop()
               backwards.stop()
               msg.reactions.removeAll()
+              return;
+            }
+
+            setTimeout(() => {
               embed2.setDescription('\\⛔ Help Module Closed')
               msg.edit(embed2)
-              return;
+              stopAll()
             }, 60000);
         
             const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅️' && user.id === message.author.id
@@ -88,11 +92,7 @@ module.exports = {
               embed2.setDescription('\\⛔ Help Module Closed')
               r.users.remove(r.users.cache.filter(u => u === message.author).first())
               msg.edit(embed2)
-              stop.stop()
-              forwards.stop()
-              backwards.stop()
-              msg.reactions.removeAll()
-              return;
+              stopAll()
             })
           })
         })

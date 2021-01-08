@@ -51,6 +51,16 @@ module.exports = {
         const greenbet = Math.round(bet * 2.5);
         const orangebet = Math.round(bet * 3);
         const yellowbet = Math.round(bet * 3.5);
+        
+        function stopAll() {
+            msg.reactions.removeAll()
+            red.stop()
+            blue.stop()
+            green.stop()
+            orange.stop()
+            yellow.stop()
+            return;
+        }
 
 
         red.on('collect', (r, u) => {
@@ -58,115 +68,55 @@ module.exports = {
             embed.setDescription(`You Won 1.5x Your Bet: $${redbet}\nYou Now Have: $${formatNumber(check.cash - bet + redbet)}`)
             msg.edit(embed)
             DB.AddCash(message.author.id, redbet)
-            msg.reactions.removeAll()
-            red.stop()
-            blue.stop()
-            green.stop()
-            orange.stop()
-            yellow.stop()
-            return;
+            stopAll()
         } else {
             embed.setDescription(`You Lost Your Bet! Color Was: \\${botroll}\nYou Now Have: $${formatNumber(check.cash - bet)}`)
             msg.edit(embed)
-            msg.reactions.removeAll()
-            red.stop()
-            blue.stop()
-            green.stop()
-            orange.stop()
-            yellow.stop()
-            return;
+            stopAll()
         }})
         blue.on('collect', (r, u) => {
             if(botroll === '🔵') {
             embed.setDescription(`You Won 2x Your Bet: $${bluebet}\nYou Now Have: $${formatNumber(check.cash - bet + bluebet)}`)
             msg.edit(embed)
             DB.AddCash(message.author.id, bluebet)
-            msg.reactions.removeAll()
-            red.stop()
-            blue.stop()
-            green.stop()
-            orange.stop()
-            yellow.stop()
-            return;
+            stopAll()
         } else {
             embed.setDescription(`You Lost Your Bet! Color Was: \\${botroll}\nYou Now Have: $${formatNumber(check.cash - bet)}`)
             msg.edit(embed)
-            msg.reactions.removeAll()
-            red.stop()
-            blue.stop()
-            green.stop()
-            orange.stop()
-            yellow.stop()
-            return;
+            stopAll()
         }})
         green.on('collect', (r, u) => {
             if(botroll === '🟢') {
             embed.setDescription(`You Won 2.5x Your Bet: $${greenbet}\nYou Now Have: $${formatNumber(check.cash - bet + greenbet)}`)
             msg.edit(embed)
             DB.AddCash(message.author.id, greenbet)
-            msg.reactions.removeAll()
-            red.stop()
-            blue.stop()
-            green.stop()
-            orange.stop()
-            yellow.stop()
-            return;
+            stopAll()
         } else {
             embed.setDescription(`You Lost Your Bet! Color Was: \\${botroll}\nYou Now Have: $${formatNumber(check.cash - bet)}`)
             msg.edit(embed)
-            msg.reactions.removeAll()
-            red.stop()
-            blue.stop()
-            green.stop()
-            orange.stop()
-            yellow.stop()
-            return;
+            stopAll()
         }})
         orange.on('collect', (r, u) => {
             if(botroll === '🟠') {
             embed.setDescription(`You Won 3x Your Bet: $${orangebet}\nYou Now Have: $${formatNumber(check.cash - bet + orangebet)}`)
             msg.edit(embed)
             DB.AddCash(message.author.id, orangebet)
-            msg.reactions.removeAll()
-            red.stop()
-            blue.stop()
-            green.stop()
-            orange.stop()
-            yellow.stop()
-            return;
+            stopAll()
         } else {
             embed.setDescription(`You Lost Your Bet! Color Was: \\${botroll}\nYou Now Have: $${formatNumber(check.cash - bet)}`)
             msg.edit(embed)
-            msg.reactions.removeAll()
-            red.stop()
-            blue.stop()
-            green.stop()
-            orange.stop()
-            yellow.stop()
-            return;
+            stopAll()
         }})
         yellow.on('collect', (r, u) => {
             if(botroll === '🟡') {
             embed.setDescription(`You Won 3.5x Your Bet: $${yellowbet}\nYou Now Have: $${formatNumber(check.cash - bet + yellowbet)}`)
             msg.edit(embed)
             DB.AddCash(message.author.id, yellowbet)
-            msg.reactions.removeAll()
-            red.stop()
-            blue.stop()
-            green.stop()
-            orange.stop()
-            yellow.stop()
-            return;
+            stopAll()
         } else {
             embed.setDescription(`You Lost Your Bet! Color Was: \\${botroll}\nYou Now Have: $${formatNumber(check.cash - bet)}`)
             msg.edit(embed)
-            msg.reactions.removeAll()
-            red.stop()
-            blue.stop()
-            green.stop()
-            orange.stop()
-            yellow.stop()
-            return;
+            stopAll()
         }})
     })
 })}}
