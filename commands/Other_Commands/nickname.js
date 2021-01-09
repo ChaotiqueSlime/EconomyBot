@@ -1,3 +1,5 @@
+const { MessageEmbed } = require("discord.js");
+
 module.exports = {
     name: 'nickname',
     description: 'nickname command',
@@ -29,6 +31,10 @@ module.exports = {
 
         return message.channel.send(`<@${message.author.id}> Your Nickname Has Been Updated!, To - ${nickname}`);
         }
-        return;
+        const noAccess = new MessageEmbed()
+        .setColor('RANDOM')
+        .setAuthor(`You're not a YouTube Member ${message.author.username}`, 'https://cdn.discordapp.com/attachments/795772613229412372/797311043990323200/721107948092522617.gif');
+
+        return message.channel.send(noAccess).then((msg) => {msg.delete({ timeout: 15000 })})
     }
 }

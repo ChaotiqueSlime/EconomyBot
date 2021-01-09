@@ -38,6 +38,7 @@ module.exports = {
 
         const embed = new MessageEmbed()
         .setColor('RANDOM')
+        .setAuthor(`= { WornOffKeys Help Menu } =`, 'https://cdn.discordapp.com/attachments/795772613229412372/797312966659407872/638576603475214336.gif')
         .setFooter(`Page ${page} of ${pages.length} [] = optional | <> = required`)
         .setThumbnail(message.author.displayAvatarURL())
         .setDescription(pages[page-1])

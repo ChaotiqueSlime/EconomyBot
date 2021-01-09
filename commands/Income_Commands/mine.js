@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js');
 const DB = require('djs-economy');
 module.exports = {
     name: 'mine',
-    description: 'mine and sell',
+    description: 'mine and sell', 
     aliases: [],
     cooldown: 5000,
     async execute(message) {
@@ -20,7 +20,12 @@ module.exports = {
         if(MembersPlusRole){if(message.member.roles.cache.has(MembersPlusRole.id)) hasPermission = true;}
         if(MembersPlusPlusRole){if(message.member.roles.cache.has(MembersPlusPlusRole.id)) hasPermission = true;}
 
-        if(!hasPermission){return message.channel.send(`You Are Not A Booster Or Youtube Member <@${message.author.id}>`).then(m => m.delete({ timeout: 8000 }));}
+        if(!hasPermission){
+            const noAccess = new MessageEmbed()
+            .setColor('RANDOM')
+            .setAuthor(`You Are Not A Booster Or Youtube Member ${message.author.username}`, 'https://cdn.discordapp.com/attachments/795772613229412372/797310165501607964/ohyes8.gif');
+            return message.channel.send(noAccess).then(m => m.delete({ timeout: 15000 }));
+        }
 
         var emoji1 = message.client.emojis.cache.get("796057222341066772");
         var emoji2 = message.client.emojis.cache.get("796057274203504710");

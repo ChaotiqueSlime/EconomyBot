@@ -31,7 +31,11 @@ module.exports = {
             embed.setDescription(`💵 **10,000,000** was added to your balance\nYou Now Have $${(formatNumber(output.cash))}`)
         return message.channel.send(embed);}
 
-        return message.channel.send(`You're not a YouTube Member <@${message.author.id}>`).then((msg) => {msg.delete({ timeout: 8000 })})
+        const noAccess = new MessageEmbed()
+        .setColor('RANDOM')
+        .setAuthor(`You're not a YouTube Member ${message.author.username}`, 'https://cdn.discordapp.com/attachments/795772613229412372/797311043990323200/721107948092522617.gif');
+
+        return message.channel.send(noAccess).then((msg) => {msg.delete({ timeout: 15000 })})
         
 
     }
