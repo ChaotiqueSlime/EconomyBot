@@ -10,7 +10,7 @@ module.exports = {
         const DB = require('djs-economy');
 
         const moderator = message.guild.roles.cache.find(r => r.name === "Moderator");
-        if(!message.member.roles.cache.has(moderator.id)) return;
+        if(moderator){if(!message.member.roles.cache.has(moderator.id)) return;}
 
         const channelID = `795792287456165898`;
         const logs = client.channels.cache.get(channelID);

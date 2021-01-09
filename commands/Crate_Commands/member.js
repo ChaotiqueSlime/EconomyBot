@@ -17,7 +17,7 @@ module.exports = {
         const embed = new MessageEmbed()
         .setColor('#cf13f0')
         .setThumbnail(cratesicon)
-        .setTitle('Member Crate Claimed');
+        .setAuthor(`Member Crate Claimed`, 'https://cdn.discordapp.com/attachments/795772613229412372/797311043990323200/721107948092522617.gif');
 
         let hasPermission = false;
 

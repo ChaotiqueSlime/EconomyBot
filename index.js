@@ -5,7 +5,7 @@ const fs = require('fs');
 const { token } = require('./config.json');
 client.commands = new Discord.Collection();
 
-handler(client)
+handler(client) 
 
 fs.readdir('./events', (err, files) => {
 	if (err) return console.log(err);

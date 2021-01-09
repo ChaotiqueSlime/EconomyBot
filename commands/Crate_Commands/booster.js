@@ -15,10 +15,10 @@ module.exports = {
           const output = await DB.GetCash(message.author.id);
             const formatNumber = require('../../functions/regex');
             const embed = new Discord.MessageEmbed()
+                .setAuthor(`Booster Crate Claimed`, 'https://cdn.discordapp.com/attachments/795772613229412372/797310165501607964/ohyes8.gif')
                 .setColor('#cf13f0')
                 .setThumbnail(cratesicon)
                 .setDescription(`💵 **5,000,000** was added to your balance\nYou Now Have $${(formatNumber(output.cash))}`)
-                .setTitle('Booster Crate Claimed');
                 message.channel.send(embed);}
             } else {
             return message.channel.send(`You are not a server booster ${message.author}`).then((msg) => {

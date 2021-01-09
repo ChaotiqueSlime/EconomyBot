@@ -1,7 +1,7 @@
 module.exports = {
     name: 'nickname',
     description: 'nickname command',
-    aliases: ['nick'],
+    aliases: ['nick', 'name'],
     cooldown: 5,
     async execute(message, args) {
         if(message.deletable) message.delete()

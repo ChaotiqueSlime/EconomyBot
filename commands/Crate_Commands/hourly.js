@@ -17,7 +17,7 @@ module.exports = {
         .setColor('#cf13f0')
         .setThumbnail(cratesicon)
         .setDescription(`💵 **100,000** was added to your balance\nYou Now Have $${(formatNumber(output.cash))}`)
-        .setTitle('Hourly Crate Claimed!');
+        .setAuthor(`Hourly Crate Claimed`, 'https://cdn.discordapp.com/attachments/795772613229412372/797311435864408084/764097781265989672.gif');
         console.log(`${message.author.username} (Balance: $${(formatNumber(output.cash))})`)
         return message.channel.send(embed);
     }
