@@ -8,7 +8,7 @@ module.exports = {
     async execute(message) {
         if(message.deletable) message.delete()
         const check = await DB.GetCash(message.author.id)
-        const work = DB.Work(100000, 300000, message.author.id);
+        const work = DB.Work(100000, 300000, message.author.id); // DB.Work(Min Value, Max Value, UserID)
         const { MessageEmbed } = require('discord.js');
         const embed = new MessageEmbed()
         .setColor('RANDOM')
