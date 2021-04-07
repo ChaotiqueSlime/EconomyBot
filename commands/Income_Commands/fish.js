@@ -8,8 +8,11 @@ module.exports = {
     async execute(message) {
         if(message.deletable) message.delete()
         const formatNumber = require('../../functions/regex')
+        
         const first = await DB.GetCash(message.author.id);
+        
         console.log(`${message.author.username} First Timer Check: ${first.cash}`)
+        
         const fish1 = Math.floor(Math.random() * 30) //Common Fish  :blowfish:
         const fish2 = Math.floor(Math.random() * 25) //Rare Fish   :fish: 
         const fish3 = Math.floor(Math.random() * 20) //Legendary Fish  :tropical_fish: 
@@ -17,6 +20,7 @@ module.exports = {
         const fishsale2 = fish2 * 1800;
         const fishsale3 = fish3 * 2000; 
         const total = fishsale1 + fishsale2 + fishsale3;
+        
         var output = await DB.GetCash(message.author.id)
         const embed = new MessageEmbed()
         .setColor('RANDOM')
