@@ -1,5 +1,7 @@
 # Economy Bot For Discord.js
 
+#### For Help Join My Discord _https://discord.gg/yv3s3b97Sn_
+
 ### Required NPM Packages
 
 ```bash
