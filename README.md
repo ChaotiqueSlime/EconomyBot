@@ -1,3 +1,5 @@
+# Economy Bot For Discord.js
+
 ### Required NPM Packages
 
 ```bash
