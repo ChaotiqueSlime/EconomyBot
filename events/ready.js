@@ -1,10 +1,8 @@
 module.exports = async (client, message) => {
-    console.log(`Client Successfuly Connected`)
-    client.user.setActivity(`Wok Economy`, { type: 'WATCHING' })
-    const channel = client.channels.cache.get('795828320301482075');
-    channel.join()
+    console.log(`Client Logged On!`)
+    client.user.setActivity(`Economy`, { type: 'WATCHING' })
+
     setInterval(() => {
-      client.user.setActivity(`Wok Economy`, { type: 'WATCHING' });
-      console.log(`Updated Activity - ${new Date().toString().split(' ', 5).join(' ')}`);
+      client.user.setActivity(`Economy`, { type: 'WATCHING' });
     }, 600000);
 }
