@@ -8,18 +8,12 @@ module.exports = {
     async execute(message, args) {
         if(message.deletable) message.delete()
 
-        const ModRole = message.guild.roles.cache.find(r => r.name === "Moderator");
-        const MembersRole = message.guild.roles.cache.find(r => r.name === "YouTube Member");
-        const MembersPlusRole = message.guild.roles.cache.find(r => r.name === "YouTube Member+");
-        const MembersPlusPlusRole = message.guild.roles.cache.find(r => r.name === "YouTube Member++");
+        const BoostRole = message.guild.roles.cache.find(r => r.name === "Server Booster");
 
         let hasPermission = false;
 
-        if(ModRole){if(message.member.roles.cache.has(ModRole.id)) hasPermission = true;}
-        if(MembersRole){if(message.member.roles.cache.has(MembersRole.id)) hasPermission = true;}
-        if(MembersPlusRole){if(message.member.roles.cache.has(MembersPlusRole.id)) hasPermission = true;}
-        if(MembersPlusPlusRole){if(message.member.roles.cache.has(MembersPlusPlusRole.id)) hasPermission = true;}
-
+        if(BoostRole){if(message.member.roles.cache.has(BoostRole.id)) hasPermission = true;}
+        
         if (hasPermission) {
         const nickname = args.join(" ");
 
