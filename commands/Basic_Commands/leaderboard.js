@@ -1,3 +1,8 @@
+const { prefix } = require('../../config.json');
+const djs = require('djs-economy');
+const Discord = require('discord.js');
+const formatNumber = require('../../functions/regex')
+
 module.exports = {
     name: "leaderboard",
     description: "A Economy Leaderboard",
@@ -5,23 +10,25 @@ module.exports = {
     cooldown: 5,
     async execute(message, args) {
         if(message.deletable) message.delete()
-        const { prefix } = require('../../config.json');
-        const djs = require('djs-economy');
-        const Discord = require('discord.js');
+    
         const { client } = message
         const userArray = message.content.split(' ');
         const userArgs = userArray.slice(1);
         const member = message.mentions.members.first() || message.guild.members.cache.get(userArgs[0]) || message.guild.members.cache.find(x => x.user.username.toLowerCase() === userArgs.slice(0).join(' ') || x.user.username === userArgs[0]) || message.member;
-        const formatNumber = require('../../functions/regex')
+       
+        
         var output = await djs.Leaderboard({
             filter: x => x.cash > 50,
             search: member.id})
         if (args[0]) {
+            
         const embed = new Discord.MessageEmbed()
         .setColor('RANDOM')
         .setDescription(`**${member.user.tag}** Is **#${output}** On The Leaderboard!`);
         message.channel.send(embed);
+            
         } else {
+            
         djs.Leaderboard({
           limit: 10,
           filter: x => x.cash > 50
